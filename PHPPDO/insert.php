@@ -14,7 +14,7 @@ require 'config.php';
 
         $users_id = $pdo->lastInsertId();
 
-        $stmt2 = $pdo->prepare("INSERT INTO orders (user_id, product, amount
+        $stmt2 = $pdo->prepare("INSERT INTO orders (users_id, product, amount)
         VALUES (?,?,?)");
 
         $stmt2->execute([$users_id, $product, $amount]);
@@ -23,3 +23,4 @@ require 'config.php';
 
 
     }
+    ?>
